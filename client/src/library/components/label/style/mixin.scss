@@ -1,0 +1,25 @@
+@import 'sassVariables';
+
+@mixin label-size($size-class, $size-var) {
+	.label.#{$size-class} {
+		width: max-content;
+		font-size: $size-var;
+		padding: $size-var/4 $size-var/2;
+		border-radius: $size-var/4;
+	}
+}
+
+@mixin standard-label($class-name, $bg-color) {
+	.label.#{$class-name} {
+		border: $bg-color solid 2px;
+		color: $tint-color;
+		background: $bg-color;
+	}
+}
+@mixin basic-label($class-name, $font-color) {
+	.label.basic.#{$class-name} {
+		border: $font-color solid 2px;
+		color: $font-color;
+		background: $tint-color;
+	}
+}

@@ -1,0 +1,12 @@
+query {
+    getAllUsers{
+        userId
+        firstName
+        lastName
+        checkList {
+            taskId
+            isDone
+            description
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@mixin standard-radio($class-name, $color) {
+	&.#{$class-name} {
+		color: $color;
+	}
+}

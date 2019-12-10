@@ -1,0 +1,84 @@
+@import 'sassVariables';
+
+@mixin accordion-size(
+	$size-class,
+	$text-size-var,
+	$padding-size-var
+) {
+	.accordion.#{$size-class} {
+		display: block;
+		width: 100%;
+		.header,
+		.content {
+			box-sizing: border-box;
+			font-size: $text-size-var;
+			padding: $padding-size-var $padding-size-var * 1.5;
+		}
+	}
+}
+
+@mixin standard-accordion($class-name, $bg-color) {
+	.accordion.#{$class-name} {
+		.header {
+			color: $tint-color;
+			background: $bg-color;
+			box-shadow: inset 0 -2px 0 0 darken($bg-color, 10%);
+			border: none;
+			&:hover,
+			&:focus {
+				outline-style: auto;
+				outline: 2px solid $bg-color;
+				cursor: pointer;
+				color: $light-tint-color;
+				background: lighten($bg-color, 10%);
+				box-shadow: inset 0 -2px 0 0 $bg-color;
+			}
+			&:active,
+			&.active-accordion {
+				cursor: pointer;
+				background: darken($bg-color, 5%);
+				box-shadow: inset 0 2px 0 0 darken($bg-color, 10%);
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
+			}
+			&.disabled {
+				cursor: not-allowed;
+				opacity: 0.6;
+				box-shadow: none;
+				pointer-events: none;
+				background-color: lighten($bg-color, 20%);
+			}
+		}
+	}
+}
+
+@mixin basic-accordion($class-name, $color) {
+	.accordion.#{$class-name}.basic {
+		.header.#{$class-name} {
+			color: $color;
+			background: $tint-color;
+			box-shadow: inset 0 0 0 2px lighten($color, 10%);
+
+			&:hover {
+				cursor: pointer;
+				background: lighten($tint-color, 20%);
+				box-shadow: inset 0 0 0 2px $color;
+			}
+			&:active,
+			&.active-accordion {
+				cursor: pointer;
+				background: darken($tint-color, 10%);
+				box-shadow: inset 0 0 0 3px darken($color, 10%);
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
+			}
+			&.disabled {
+				cursor: not-allowed;
+				opacity: 0.6;
+				box-shadow: none;
+				pointer-events: none;
+				background-color: lighten($tint-color, 20%);
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@import 'sassVariables';
+@import 'mixin.scss';
+
+.message {
+	@extend %regular-font;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+	.title {
+		@extend %bold-font;
+	}
+}
+
+// message sizes
+@include message-size('mini', $mini-size);
+@include message-size('tiny', $tiny-size);
+@include message-size('small', $small-size);
+@include message-size('medium', $medium-size);
+@include message-size('large', $large-size);
+@include message-size('xlarge', $xlarge-size);
+@include message-size('huge', $huge-size);
+@include message-size('giga', $giga-size);
+
+// standard messages
+@include standard-message('primary', $primary-color);
+@include standard-message('secondary', $secondary-color);
+@include standard-message('warning', $warning-color);
+@include standard-message('negative', $negative-color);
+@include standard-message('positive', $positive-color);
+@include standard-message('info', $info-color);
+
+// basic messages
+@include basic-message('primary', $primary-color);
+@include basic-message('secondary', $secondary-color);
+@include basic-message('warning', $warning-color);
+@include basic-message('negative', $negative-color);
+@include basic-message('positive', $positive-color);
+@include basic-message('info', $info-color);

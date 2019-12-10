@@ -1,0 +1,28 @@
+mutation {
+  createUser(name: "Lasse", role: "pro gamer"){
+    name
+	role
+  }
+}
+
+{
+  showUser {
+    name
+    role
+  }
+}
+
+
+mutation {
+  updateUser(name: "jeepser"){
+    name
+	role
+  }
+}
+
+{
+  showUser {
+    name
+    role
+  }
+}

@@ -1,0 +1,20 @@
+version: "3.6"
+services:
+  server:
+    image: server:${GITHUB_SHA:-latest}
+    ports:
+      - 4000:4000
+    volumes:
+      - dist:/app/dist
+      - ./server:/app
+      - /app/node_modules
+    build: ./server
+  client:
+    image: client:${GITHUB_SHA:-latest}
+    volumes:
+      - dist:/app/dist
+      - ./client:/app
+      - /app/node_modules
+    build: ./client
+volumes:
+  dist:

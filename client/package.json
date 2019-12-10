@@ -1,0 +1,86 @@
+{
+	"name": "service-template",
+	"version": "1.0.0",
+	"description": "This project contains the minimal configuration for a svift.net service/feature",
+	"main": "./src/index.js",
+	"scripts": {
+		"watch": "webpack --watch --config webpack/dev.config.js",
+		"prod": "webpack --config webpack/prod.config.js",
+		"start": "webpack-dev-server --config webpack/dev.config.js",
+		"storybook": "start-storybook -p 9009",
+		"build-storybook": "build-storybook"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/svift-net/Service-Template.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/svift-net/Service-Template/issues"
+	},
+	"homepage": "https://github.com/svift-net/Service-Template#readme",
+	"dependencies": {
+		"@apollo/react-hooks": "^3.0.1",
+		"@babel/cli": "^7.5.5",
+		"@babel/core": "^7.5.5",
+		"@babel/node": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@babel/preset-react": "^7.0.0",
+		"@babel/register": "^7.5.5",
+		"apollo-cache-inmemory": "^1.6.3",
+		"apollo-client": "^2.6.4",
+		"apollo-link-http": "^1.5.15",
+		"babel-eslint": "^10.0.2",
+		"babel-loader": "^8.0.6",
+		"babel-register": "^6.26.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^3.1.0",
+		"duplicate-package-checker-webpack-plugin": "^3.0.0",
+		"graphql": "^14.5.0",
+		"graphql-tag": "^2.10.1",
+		"html-webpack-plugin": "^3.2.0",
+		"node-sass": "^4.13.0",
+		"prop-types": "^15.7.2",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-router-dom": "^5.1.2",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"webpack": "^4.39.1",
+		"webpack-cli": "^3.3.7",
+		"webpack-merge": "^4.2.1"
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^5.2.1",
+		"@storybook/addon-links": "^5.2.1",
+		"@storybook/addons": "^5.2.1",
+		"@storybook/react": "^5.2.1",
+		"eslint": "^6.3.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-prettier": "^6.3.0",
+		"eslint-import-resolver-webpack": "^0.11.1",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.1",
+		"eslint-plugin-react": "^7.14.3",
+		"eslint-plugin-react-hooks": "^2.0.1",
+		"prettier": "^1.18.2",
+		"ts-loader": "^6.0.4",
+		"typescript": "^3.5.3",
+		"webpack-dev-middleware": "^3.7.0",
+		"webpack-dev-server": "^3.8.0"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

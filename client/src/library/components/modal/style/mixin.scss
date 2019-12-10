@@ -1,0 +1,35 @@
+@mixin basic-modal($class-name, $font-color) {
+	.modalcontent.#{$class-name} {
+		color: $font-color;
+		background: $tint-color;
+		border: $font-color solid 4px;
+		border-radius: 8px;
+		max-width: 50%;
+		.topBar {
+			border-bottom: $font-color solid 4px;
+			padding: 8px;
+			@extend %bold-font;
+			.closeIcon {
+				border-radius: 8px;
+				float: right;
+				&:hover {
+					cursor: pointer;
+					color: lighten($font-color, 20%);
+					background: lighten($tint-color, 20%);
+				}
+				&:active,
+				&.active-closeIcon {
+					cursor: pointer;
+					color: darken($font-color, 10%);
+					background: darken($tint-color, 10%);
+				}
+			}
+		}
+		.content {
+			color: $shade-color;
+			background: $tint-color;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+	}
+}

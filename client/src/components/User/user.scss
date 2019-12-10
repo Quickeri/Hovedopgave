@@ -1,0 +1,13 @@
+@import 'sassVariables';
+
+.user {
+	margin-left: 25%;
+	margin-right: 25%;
+	@extend %regular-font;
+	.userName {
+		@extend %bold-font;
+	}
+	.updateUser {
+		font-size: 18px;
+	}
+}

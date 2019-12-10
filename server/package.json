@@ -1,0 +1,38 @@
+{
+    "type": "module",
+    "name": "server",
+    "version": "1.0.0",
+    "description": "This project contains the minimal configuration for a svift.net service/feature",
+    "main": "src/root.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --delay 80ms --legacy-watch src/root.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/svift-net/Service-Template.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/svift-net/Service-Template/issues"
+    },
+    "homepage": "https://github.com/svift-net/Service-Template#readme",
+    "dependencies": {
+        "apollo-server-express": "^2.9.4",
+        "express": "^4.17.1",
+        "graphql": "14.4.2",
+        "graphql-tag": "^2.10.1",
+        "graphql-tools": "^4.0.5"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.5.1",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.1",
+        "nodemon": "^1.19.3",
+        "prettier": "^1.18.2"
+    }
+}

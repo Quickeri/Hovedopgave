@@ -1,0 +1,17 @@
+mutation 
+  updateNote (
+    $userId: ID!
+    $noteId: ID!
+    $newTitle: String!
+    $newDescription: String!
+  ) {
+    updateNote(
+        userId: $userId
+        noteId: $noteId
+        newTitle: $newTitle
+        newDescription: $newDescription
+    ) {
+    title
+    description
+    }
+}

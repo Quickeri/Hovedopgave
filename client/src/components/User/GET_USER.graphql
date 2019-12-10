@@ -1,0 +1,17 @@
+query getSpecificUser($firstName: String!, $lastName: String!) {
+	getSpecificUser(firstName: $firstName, lastName: $lastName) {
+		userId
+		firstName
+		lastName
+		notes {
+			noteId
+			title
+			description
+		}
+		checkList {
+			taskId
+			isDone
+			description
+		}
+	}
+}

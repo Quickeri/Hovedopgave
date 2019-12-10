@@ -1,0 +1,5 @@
+@mixin standard-checkbox($class-name, $color) {
+    &.#{$class-name} {
+        color: $color;
+    }
+}

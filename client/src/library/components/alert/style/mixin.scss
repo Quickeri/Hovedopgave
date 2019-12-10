@@ -1,0 +1,19 @@
+@mixin basic-alert($class-name, $font-color) {
+	.alertcontent.#{$class-name} {
+		color: $font-color;
+		background: $tint-color;
+		border: $font-color solid 4px;
+		border-radius: 8px;
+		.topBar {
+			border-bottom: $font-color solid 4px;
+			padding: 8px;
+			@extend %bold-font;
+		}
+		.content {
+			color: $shade-color;
+			background: $tint-color;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+	}
+}

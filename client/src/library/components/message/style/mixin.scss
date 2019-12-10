@@ -1,0 +1,45 @@
+@import 'sassVariables';
+
+@mixin message-size($size-class, $size-var) {
+    .message.#{$size-class} {
+        font-size: $size-var;
+        padding: $size-var/3 $size-var/1.5;
+    }
+}
+
+@mixin standard-message($class-name, $bg-color) {
+    .message.#{$class-name} {
+        color: $tint-color;
+        background: $bg-color;
+        box-shadow: inset 0 -2px 0 0 darken($bg-color, 10%);
+        .closeIcon {
+            &:hover {
+                cursor: pointer;
+                background: lighten($bg-color, 20%);
+            }
+            &:active,
+            &.active-closeIcon {
+                cursor: pointer;
+                background: darken($bg-color, 10%);
+            }
+        }
+    }
+}
+
+@mixin basic-message($class-name, $font-color) {
+    .message.basic.#{$class-name} {
+        color: $font-color;
+        background: $tint-color;
+        .closeIcon.basic {
+            &:hover {
+                cursor: pointer;
+                background: lighten($tint-color, 20%);
+            }
+            &:active,
+            &.active-closeIcon {
+                cursor: pointer;
+                background: darken($tint-color, 10%);
+            }
+        }
+    }
+}

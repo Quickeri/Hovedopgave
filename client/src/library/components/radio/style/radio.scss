@@ -1,0 +1,31 @@
+@import 'sassVariables';
+@import 'mixin';
+
+/* The container */
+.container {
+	color: $shade-color;
+	@extend %bold-font;
+	display: inline-flex;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	i {
+		margin-right: 6px;
+	}
+	.label {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	i {
+		color: $light-shade-color;
+		@include standard-radio('primary', $primary-color);
+	}
+	// Hide the browser's default radio button
+	input {
+		display: none;
+	}
+}

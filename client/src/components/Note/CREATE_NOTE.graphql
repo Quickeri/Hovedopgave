@@ -1,0 +1,9 @@
+mutation createNote($userId: ID!
+$noteId: ID!
+$title: String!
+$description: String!
+){
+    createNote(userId: $userId, noteId: $noteId, title: $title, description: $description)
+    title
+    description
+}

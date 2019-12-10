@@ -1,0 +1,39 @@
+@import 'sassVariables';
+@import './mixin.scss';
+
+.label {
+	@extend %regular-font;
+	border: none;
+	outline: none;
+	display: flex;
+}
+
+.content {
+	display: inline;
+}
+
+// label sizes
+@include label-size('mini', $mini-size);
+@include label-size('tiny', $tiny-size);
+@include label-size('small', $small-size);
+@include label-size('medium', $medium-size);
+@include label-size('large', $large-size);
+@include label-size('xlarge', $xlarge-size);
+@include label-size('huge', $huge-size);
+@include label-size('giga', $giga-size);
+
+// standard labels
+@include standard-label('primary', $primary-color);
+@include standard-label('secondary', $secondary-color);
+@include standard-label('warning', $warning-color);
+@include standard-label('negative', $negative-color);
+@include standard-label('positive', $positive-color);
+@include standard-label('info', $info-color);
+
+// basic labels
+@include basic-label('primary', $primary-color);
+@include basic-label('secondary', $secondary-color);
+@include basic-label('warning', $warning-color);
+@include basic-label('negative', $negative-color);
+@include basic-label('positive', $positive-color);
+@include basic-label('info', $info-color);

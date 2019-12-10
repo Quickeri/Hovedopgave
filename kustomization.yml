@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-template-test
+  labels:
+    env: production
+    tier: frontend
+spec:
+  containers:
+    - name: service-template
+      # image: placeholder will be replaced from the dockerpush.yml file
+      image: placeholder
+      ports:
+        - containerPort: 4000

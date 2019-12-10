@@ -1,0 +1,12 @@
+@import 'sassVariables';
+
+.list {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	display: inline-block;
+	list-style-position: inside;
+	.item {
+		@extend %regular-font;
+		color: $shade-color;
+	}
+}

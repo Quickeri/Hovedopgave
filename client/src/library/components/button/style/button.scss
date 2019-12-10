@@ -1,0 +1,37 @@
+@import 'sassVariables';
+@import './mixin.scss';
+
+// base button class
+.button {
+    @extend %regular-font;
+    line-height: 1;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+}
+
+// button sizes
+@include button-size('mini', $mini-text-size, $mini-size);
+@include button-size('tiny', $tiny-text-size, $mini-size);
+@include button-size('small', $small-text-size, $mini-size);
+@include button-size('medium', $medium-text-size, $tiny-size);
+@include button-size('large', $large-text-size, $tiny-size);
+@include button-size('xlarge', $xlarge-text-size, $tiny-size);
+@include button-size('huge', $huge-text-size, $small-size);
+@include button-size('giga', $giga-text-size, $small-size);
+
+// standard buttons
+@include standard-button('primary', $primary-color);
+@include standard-button('secondary', $secondary-color);
+@include standard-button('warning', $warning-color);
+@include standard-button('negative', $negative-color);
+@include standard-button('positive', $positive-color);
+@include standard-button('info', $info-color);
+
+// basic buttons
+@include basic-button('primary', $primary-color);
+@include basic-button('secondary', $secondary-color);
+@include basic-button('warning', $warning-color);
+@include basic-button('negative', $negative-color);
+@include basic-button('positive', $positive-color);
+@include basic-button('info', $info-color);

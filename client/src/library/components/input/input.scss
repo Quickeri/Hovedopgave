@@ -1,0 +1,14 @@
+@import 'sassVariables';
+
+.input {
+	margin-right: 4px;
+	padding: 4px;
+
+	border: $light-primary-color solid 1px;
+	border-radius: 4px;
+	&:focus {
+		outline: $primary-color solid 1px;
+		border: $primary-color solid 1px;
+		box-shadow: 1px 1px 3px $shade-color;
+	}
+}

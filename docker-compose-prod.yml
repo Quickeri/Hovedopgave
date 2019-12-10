@@ -1,0 +1,7 @@
+version: "3.6"
+services:
+  prod-server:
+    image: prod-server:${GITHUB_SHA:-latest}
+    ports:
+      - 4000:4000
+    build: .

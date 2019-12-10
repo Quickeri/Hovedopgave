@@ -1,0 +1,3 @@
+mutation deleteNote($userId: ID!, $noteId: ID!) {
+    deleteNote(userId: $userId, noteId: $noteId)
+}

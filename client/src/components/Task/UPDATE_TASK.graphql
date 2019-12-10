@@ -1,0 +1,16 @@
+mutation updateTask(
+    $userId: ID!
+    $taskId: ID!
+    $newIsDone: Boolean!
+    $newDescription: String!
+) {
+    updateTask(
+        userId: $userId
+        taskId: $taskId
+        newIsDone: $newIsDone
+        newDescription: $newDescription
+    ) {
+        isDone
+        description
+    }
+}

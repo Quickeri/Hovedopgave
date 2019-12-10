@@ -1,0 +1,35 @@
+@import 'sassVariables';
+@import 'mixin.scss';
+
+// The container
+.container {
+	color: $shade-color;
+	@extend %bold-font;
+	display: inline-flex;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	.label {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	i {
+		@include standard-checkbox('primary', $primary-color);
+		color: $light-shade-color;
+		margin-right: 6px;
+	}
+	// checkbox icon
+	// hide the browser's default radio button
+	input {
+		display: none;
+	}
+}
+
+// @include standard-checkbox('secondary', $secondary-color);
+// @include standard-checkbox('warning', $warning-color);
+// @include standard-checkbox('negative', $negative-color);
+// @include standard-checkbox('positive', $positive-color);
+// @include standard-checkbox('info', $info-color);

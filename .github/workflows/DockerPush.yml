@@ -1,0 +1,56 @@
+name: Docker Build
+on: 
+  push:
+    branches:
+      - master
+env:
+  HOST_NAME: eu.gcr.io
+  PROJECT_ID: ${{ secrets.GCLOUD_PROJECT }}
+  GITHUB_SHA: ${{ github.sha }}
+  IMAGE_NAME: ${{ secrets.GCLOUD_PROJECT }}
+  GKE_CLUSTER: service-template-cluster
+  GKE_ZONE: europe-west3-a
+  IMAGE: prod-server
+  IMAGE_REPO: eu.gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "270.0.0"
+          #service_account_email: ${{ secrets.CLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+
+      - name: Set up docker to authenticate via gcloud command-line tool.
+        run: gcloud auth configure-docker
+
+      - name: Build the Docker production image
+        run: |
+          docker-compose -f \
+          docker-compose-prod.yml build
+
+      - name: Tag and push production Image
+        run: |
+          docker tag prod-server:$GITHUB_SHA \
+          $HOST_NAME/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+          docker push $HOST_NAME/$PROJECT_ID/$IMAGE
+
+      - name: Login to cluster
+        run: |
+          gcloud container clusters get-credentials \
+          $GKE_CLUSTER --zone=$GKE_ZONE --project=$PROJECT_ID
+
+      - name: Setup of Google Kubernetes Engine config
+        run: |
+          kubectl set image -f kustomization.yml \
+          service-template=$IMAGE_REPO \
+          --local -o yaml > deployment.yml
+
+      - name: Use the new image
+        run: kubectl apply -f deployment.yml

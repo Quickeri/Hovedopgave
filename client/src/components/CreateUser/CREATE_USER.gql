@@ -1,0 +1,11 @@
+mutation createUser($firstName: String!, $lastName: String!, $uiLanguage: String!){
+    createUser(firstName: $firstName, lastName: $lastName, uiLanguage: $uiLanguage){
+		userId
+        firstName
+        lastName
+        uiLanguage
+		checkList{
+			description
+		}
+    }
+}
