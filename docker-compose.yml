@@ -2,19 +2,19 @@ version: "3.6"
 services:
   server:
     image: server
-    ports:
-      - 4000:4000
-    volumes:
-      - dist:/app/dist
-      - ./server:/app
-      - /app/node_modules
     build: ./server
+    ports:
+      - "4000:4000"
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+      - dist:/app/dist
   client:
     image: client
-    volumes:
-      - dist:/app/dist
-      - ./client:/app
-      - /app/node_modules
     build: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+      - dist:/app/dist
 volumes:
   dist:
